@@ -92,7 +92,7 @@ class AnimatedIntroduction extends StatefulWidget {
     this.footerGradients = const [],
     this.containerBg = Colors.white,
     required this.onDone,
-    this.indicatorType = IndicatorType.CIRCLE,
+    this.indicatorType = IndicatorType.circle,
     this.physics = const BouncingScrollPhysics(),
     this.onSkip,
     this.nextWidget,

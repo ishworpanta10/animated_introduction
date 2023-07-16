@@ -27,6 +27,7 @@ class ExamplePage extends StatelessWidget {
     return Scaffold(
       body: AnimatedIntroduction(
         slides: pages,
+        indicatorType: IndicatorType.circle,
         onDone: () {
           /// TODO: Go to desire page like login or home
         },

@@ -23,9 +23,9 @@ class PageIndicator extends StatelessWidget {
 
   _indicator(bool isActive) {
     return GestureDetector(
-      onTap: this.onTap,
+      onTap: onTap,
       child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 6.0),
+        padding: const EdgeInsets.symmetric(horizontal: 6.0),
         child: buildIndicatorShape(type, isActive),
       ),
     );
@@ -41,7 +41,7 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: _buildPageIndicators(),
@@ -50,16 +50,15 @@ class PageIndicator extends StatelessWidget {
 
   Widget buildIndicatorShape(type, isActive) {
     double scaleFactor = isActive ? 1.4 : 1.0;
-    double angle = type == IndicatorType.DIAMOND ? pi / 4 : 0.0;
+    double angle = type == IndicatorType.diamond ? pi / 4 : 0.0;
     return Transform.scale(
       scale: scaleFactor,
       child: Transform.rotate(
         angle: angle,
-//      angle: type == IndicatorType.DIAMOND ? pi / 4 : 0.0,
         child: AnimatedContainer(
-          height: type == IndicatorType.CIRCLE || type == IndicatorType.DIAMOND ? 8.0 : 4.8,
-          width: type == IndicatorType.CIRCLE || type == IndicatorType.DIAMOND ? 8.0 : 24.0,
-          duration: Duration(milliseconds: 300),
+          height: type == IndicatorType.circle || type == IndicatorType.diamond ? 8.0 : 4.8,
+          width: type == IndicatorType.circle || type == IndicatorType.diamond ? 8.0 : 24.0,
+          duration: const Duration(milliseconds: 300),
           decoration: decoration(isActive, type),
         ),
       ),
@@ -68,18 +67,10 @@ class PageIndicator extends StatelessWidget {
 
   BoxDecoration decoration(bool isActive, type) {
     return BoxDecoration(
-      shape: type == IndicatorType.CIRCLE ? BoxShape.circle : BoxShape.rectangle,
+      shape: type == IndicatorType.circle ? BoxShape.circle : BoxShape.rectangle,
       color: isActive ? activeDotColor : inactiveDotColor,
-      borderRadius: type == IndicatorType.CIRCLE || type == IndicatorType.DIAMOND ? null : BorderRadius.circular(50),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.black.withOpacity(
-            .02,
-          ),
-          offset: Offset(0.0, 2.0),
-          blurRadius: 2.0,
-        )
-      ],
+      borderRadius: type == IndicatorType.circle || type == IndicatorType.diamond ? null : BorderRadius.circular(50),
+      boxShadow: [BoxShadow(color: Colors.black.withOpacity(.02), offset: const Offset(0.0, 2.0), blurRadius: 2.0)],
     );
   }
 }

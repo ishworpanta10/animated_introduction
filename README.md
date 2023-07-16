@@ -4,7 +4,7 @@ Simple Animated Introduction Screen for Flutter
 
 Add this to your flutter app to get a simple animated introduction screen.
 
-![example_gif.gif](assets/example_gif.gif)
+<img src="assets/example_gif.gif" width="270" alt="example">
 
 
 ## Getting started
@@ -51,6 +51,7 @@ final List<SingleIntroScreen> slides = [
 ```dart
 AnimatedIntroduction(
     slides: slides,
+    // indicatorType: IndicatorType.circle,
     onDone: () {
     /// TODO: Go to desire page like login or home
     },
