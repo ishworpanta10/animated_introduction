@@ -13,7 +13,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  animated_introduction: ^latest_version
+  animated_introduction: ^1.0.2
 ```
 
 ## Usage
