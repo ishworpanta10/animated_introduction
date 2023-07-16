@@ -27,7 +27,7 @@ import 'package:animated_introduction/animated_introduction.dart';
 #### Create a list of `SingleIntroScreen` objects
 
 ```dart
-final List<SingleIntroScreen> slides = [
+final List<SingleIntroScreen> pages = [
   const SingleIntroScreen(
     title: 'Welcome to the Event Management App !',
     description: 'You plans your Events, We\'ll do the rest and will be the best! Guaranteed!  ',

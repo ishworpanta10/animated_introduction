@@ -13,3 +13,6 @@
 
 ## 1.0.3
 - some changes in example
+
+## 1.0.4
+- updated some config for AnimatedIntroduction

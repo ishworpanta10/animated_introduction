@@ -48,14 +48,12 @@ class ExamplePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AnimatedIntroduction(
-        slides: pages,
-        indicatorType: IndicatorType.circle,
-        onDone: () {
-          /// TODO: Go to desire page like login or home
-        },
-      ),
+    return AnimatedIntroduction(
+      slides: pages,
+      indicatorType: IndicatorType.circle,
+      onDone: () {
+        /// TODO: Go to desire page like login or home
+      },
     );
   }
 }
