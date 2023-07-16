@@ -13,7 +13,7 @@ Add this to your package's pubspec.yaml file:
 
 ```yaml
 dependencies:
-  animated_introduction: ^1.0.2
+  animated_introduction: ^1.0.3
 ```
 
 ## Usage
@@ -49,13 +49,15 @@ final List<SingleIntroScreen> slides = [
 #### Pass the list to `AnimatedIntroduction` widget
 
 ```dart
-AnimatedIntroduction(
-    slides: slides,
-    // indicatorType: IndicatorType.circle,
+Scaffold(
+  body: AnimatedIntroduction(
+    slides: pages,
+    indicatorType: IndicatorType.circle,
     onDone: () {
-    /// TODO: Go to desire page like login or home
-    },
-),
+/// TODO: Go to desire page like login or home
+      },
+    ),
+  );
 ```
 
 

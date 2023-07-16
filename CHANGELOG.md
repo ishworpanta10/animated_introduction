@@ -10,3 +10,6 @@
 
 ## 1.0.2
 - updated gif 
+
+## 1.0.3
+- some changes in example
