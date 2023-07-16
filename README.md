@@ -4,7 +4,7 @@ Simple Animated Introduction Screen for Flutter
 
 Add this to your flutter app to get a simple animated introduction screen.
 
-<img src="assets/example_gif.gif" width="270" alt="example">
+<img src="https://raw.githubusercontent.com/ishworpanta10/animated_introduction/main/assets/example_gif.gif" width="270" alt="example">
 
 
 ## Getting started

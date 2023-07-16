@@ -1,6 +1,6 @@
 name: animated_introduction
 description: A new flutter introduction package with image and animation, which you can use to show your app features or product showcase.
-version: 1.0.0
+version: 1.0.2
 homepage: https://github.com/ishworpanta10/animated_introduction
 
 environment:
