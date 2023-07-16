@@ -1,39 +1,63 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Simple Animated Introduction Screen for Flutter
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Add this to your flutter app to get a simple animated introduction screen.
+
+![example_gif.gif](assets/example_gif.gif)
+
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this to your package's pubspec.yaml file:
+
+```yaml
+dependencies:
+  animated_introduction: ^latest_version
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+#### Import the package
 
 ```dart
-const like = 'sample';
+import 'package:animated_introduction/animated_introduction.dart';
 ```
 
-## Additional information
+#### Create a list of `SingleIntroScreen` objects
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+final List<SingleIntroScreen> slides = [
+  const SingleIntroScreen(
+    title: 'Welcome to the Event Management App !',
+    description: 'You plans your Events, We\'ll do the rest and will be the best! Guaranteed!  ',
+    imageAsset: 'assets/onboard_one.png',
+  ),
+  const SingleIntroScreen(
+    title: 'Book tickets to cricket matches and events',
+    description: 'Tickets to the latest movies, crickets matches, concerts, comedy shows, plus lots more !',
+    imageAsset: 'assets/onboard_two.png',
+  ),
+  const SingleIntroScreen(
+    title: 'Grabs all events now only in your hands',
+    description: 'All events are now in your hands, just a click away ! ',
+    imageAsset: 'assets/onboard_three.png',
+  ),
+];
+```
+
+#### Pass the list to `AnimatedIntroduction` widget
+
+```dart
+AnimatedIntroduction(
+    slides: slides,
+    onDone: () {
+    /// TODO: Go to desire page like login or home
+    },
+),
+```
+
+
+
+
+

@@ -1,7 +1,7 @@
 name: animated_introduction
 description: A new Flutter package for introduction screen.
 version: 0.0.1
-homepage:
+homepage: https://github.com/ishworpanta10/animated_introduction
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
