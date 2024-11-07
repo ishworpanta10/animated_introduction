@@ -37,7 +37,11 @@ class AnimatedIntroduction extends StatefulWidget {
   ///[List<IntroScreen>]
   final List<SingleIntroScreen> slides;
 
-  ///sets the skip widget text
+  ///sets the skip widget, the one used to skip to the final screen
+  ///[Widget]
+  final Widget? skipWidget;
+
+  ///sets the skip text
   ///[String]
   final String skipText;
 
@@ -104,6 +108,7 @@ class AnimatedIntroduction extends StatefulWidget {
     this.physics = const BouncingScrollPhysics(),
     this.onSkip,
     this.nextWidget,
+    this.skipWidget,
     this.doneWidget,
     this.activeDotColor = Colors.white,
     this.inactiveDotColor,
@@ -168,6 +173,17 @@ class AnimatedIntroductionState extends State<AnimatedIntroduction> with TickerP
           fontWeightDelta: 1,
         ),
       );
+
+  Widget get skip =>
+      widget.skipWidget ??
+          Text(
+            widget.skipText,
+            style: textStyle.apply(
+              color: widget.textColor,
+              fontSizeFactor: .9,
+              fontWeightDelta: 1,
+            ),
+          );
 
   Widget get done =>
       widget.doneWidget ??
@@ -328,14 +344,7 @@ class AnimatedIntroductionState extends State<AnimatedIntroduction> with TickerP
                               child: InkWell(
                                 borderRadius: BorderRadius.circular(100),
                                 onTap: onSkip,
-                                child: Text(
-                                  widget.skipText,
-                                  style: textStyle.apply(
-                                    color: widget.textColor,
-                                    fontSizeFactor: .9,
-                                    fontWeightDelta: 1,
-                                  ),
-                                ),
+                                child: skip,
                               ),
                             ),
                           ),
